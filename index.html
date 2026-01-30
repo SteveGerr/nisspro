@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>НиссПро - Профессиональный автосервис</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="style.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <style>
+        /* Reset и базовые стили
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Стили для header */
+        .main-header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            font-size: 32px;
+            color: #3498db;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .logo-text span {
+            color: #3498db;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 5px;
+        }
+
+        .contact-address,
+        .contact-phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-address:hover,
+        .contact-phone:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-icon {
+            font-size: 18px;
+            color: #3498db;
+        }
+
+        /* Стили для слайдера */
+        .slider-section {
+            position: relative;
+            overflow: hidden;
+            height: 70vh;
+            min-height: 500px;
+            max-height: 700px;
+        }
+
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide-content {
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            padding: 40px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .slide-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .slide-text {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .slider-btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .prev-btn {
+            left: 20px;
+        }
+
+        .next-btn {
+            right: 20px;
+        }
+
+        /* Стили для секции с инфо-блоками */
+        .info-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #2c3e50;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: #3498db;
+        }
+
+        .info-blocks {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .info-block {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .info-block:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-img {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .info-content {
+            padding: 25px;
+        }
+
+        .info-title {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .info-text {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Стили для footer */
+        .main-footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+            padding-right: 20px;
+        }
+
+        .footer-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #3498db;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: #3498db;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #3498db;
+        }
+
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-contact-icon {
+            color: #3498db;
+            font-size: 18px;
+            width: 25px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            color: #bdc3c7;
+        }
+
+        /* Адаптивные стили */
+        @media (max-width: 992px) {
+            .slide-content {
+                padding: 30px;
+            }
+
+            .slide-title {
+                font-size: 28px;
+            }
+
+            .slide-text {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-header {
+                padding: 10px 0;
+            }
+
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .contact-info {
+                align-items: center;
+            }
+
+            .slider-section {
+                height: 60vh;
+                min-height: 400px;
+            }
+
+            .slide-content {
+                padding: 20px;
+            }
+
+            .slide-title {
+                font-size: 24px;
+            }
+
+            .info-blocks {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-column {
+                flex: 100%;
+                margin-bottom: 30px;
+            }
+
+            .slider-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .slider-section {
+                height: 50vh;
+                min-height: 350px;
+            }
+
+            .slide-title {
+                font-size: 20px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .info-section {
+                padding: 50px 0;
+            }
+
+            .main-footer {
+                padding: 30px 0 15px;
+            }
+
+            .contact-address,
+            .contact-phone {
+                font-size: 14px;
+            }
+        } */
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-car logo-icon"></i>
+                <div class="logo-text">Niss<span>Pro</span></div>
+            </div>
+            <div class="contact-info">
+                <a href="https://yandex.ru/maps/?text=53.199417, 50.152565" target="_blank"
+                    class="contact-address">
+                    <i class="fas fa-map-marker-alt contact-icon"></i>
+                    <span>Самара, проспект Карла Маркса, 30А</span>
+                </a>
+                <a href="tel:+79272953030" class="contact-phone">
+                    <i class="fas fa-phone contact-icon"></i>
+                    <span>+7 (927) 295-30-30</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Слайдер -->
+    <section class="slider-section">
+        <div class="slider">
+            <div class="slide active"
+                style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80')">
+                <div class="slide-content">
+                    <h2 class="slide-title">Профессиональный ремонт</h2>
+                    <p class="slide-text">Качественное обслуживание и ремонт автомобилей любой сложности с
+                        использованием оригинальных запчастей и аналогов.</p>
+                </div>
+            </div>
+            <div class="slide"
+                style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80')">
+                <div class="slide-content">
+                    <h2 class="slide-title">Диагностика и техническое обслуживание</h2>
+                    <p class="slide-text">Современное диагностическое оборудование позволяет точно определить
+                        неисправность и выполнить качественный ремонт.</p>
+                </div>
+            </div>
+            <div class="slide"
+                style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80')">
+                <div class="slide-content">
+                    <h2 class="slide-title">Шиномонтаж и сход-развал</h2>
+                    <p class="slide-text">Полный комплекс услуг по шиномонтажу и регулировке углов установки колес на
+                        современном оборудовании.</p>
+                </div>
+            </div>
+        </div>
+        <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+    </section>
+
+    <!-- Инфо-блоки -->
+    <section class="info-section">
+        <div class="container">
+            <h2 class="section-title">Наши услуги</h2>
+            <div class="info-blocks">
+                <div class="info-block">
+                    <img src="images/diagnost.jpeg"
+                        alt="Диагностика двигателя" class="info-img">
+                    <div class="info-content">
+                        <h3 class="info-title">Диагностика двигателя</h3>
+                        <p class="info-text">Полная компьютерная диагностика двигателя, выявление неисправностей на
+                            ранней стадии. Используем современное оборудование для точного определения проблем.</p>
+                    </div>
+                </div>
+                <div class="info-block">
+                    <img src="images/undercarriage.jpeg"
+                        alt="Ремонт ходовой части" class="info-img">
+                    <div class="info-content">
+                        <h3 class="info-title">Ремонт ходовой части</h3>
+                        <p class="info-text">Профессиональный ремонт подвески, замена амортизаторов, шаровых опор,
+                            сайлентблоков. Гарантия на все выполненные работы.</p>
+                    </div>
+                </div>
+                <div class="info-block">
+                    <img src="images/akpp.jpeg"
+                        alt="Обслуживание АКПП" class="info-img">
+                    <div class="info-content">
+                        <h3 class="info-title">Обслуживание АКПП</h3>
+                        <p class="info-text">Диагностика, ремонт и обслуживание автоматических коробок передач. Замена
+                            масла, фильтров, ремонт гидроблоков и мехатроников.</p>
+                    </div>
+                </div>
+                <div class="info-block">
+                    <img src="images/tire-service.jpeg"
+                        alt="Кузовные работы" class="info-img">
+                    <div class="info-content">
+                        <h3 class="info-title">Шиномонтаж</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 class="footer-title">О компании</h3>
+                    <p>NissPro - специализированный автосервис по ремонту и обслуживанию автомобилей Nissan, Infinity, lexus и других. Мы работаем
+                        с 2010 года и имеем репутацию надежного партнера.</p>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Услуги</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Диагностика автомобиля</a></li>
+                        <li><a href="#">Техническое обслуживание</a></li>
+                        <li><a href="#">Ремонт двигателей</a></li>
+                        <li><a href="#">Шиномонтаж</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Контакты</h3>
+                    <div class="footer-contact">
+                        <div class="footer-contact-item">
+                            <i class="fas fa-map-marker-alt footer-contact-icon"></i>
+                            <span>Самара, проспект Карла Маркса, 30А</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-phone footer-contact-icon"></i>
+                            <span>+7 (927) 295-30-30</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-envelope footer-contact-icon"></i>
+                            <span>info@nisspro.ru</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-clock footer-contact-icon"></i>
+                            <span>Пн-Пт: 9:00-20:00, Сб: 09:00-18:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 NissPro. Все права защищены.
+            </div>
+        </div>
+    </footer>
+<script src="main.js"></script>
+    <!-- <script>
+        // Слайдер
+        document.addEventListener('DOMContentLoaded', function () {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            let currentSlide = 0;
+
+            // Функция для показа текущего слайда
+            function showSlide(index) {
+                // Скрываем все слайды
+                slides.forEach(slide => {
+                    slide.classList.remove('active');
+                });
+
+                // Показываем текущий слайд
+                slides[index].classList.add('active');
+                currentSlide = index;
+            }
+
+            // Функция для следующего слайда
+            function nextSlide() {
+                currentSlide++;
+                if (currentSlide >= slides.length) {
+                    currentSlide = 0;
+                }
+                showSlide(currentSlide);
+            }
+
+            // Функция для предыдущего слайда
+            function prevSlide() {
+                currentSlide--;
+                if (currentSlide < 0) {
+                    currentSlide = slides.length - 1;
+                }
+                showSlide(currentSlide);
+            }
+
+            // Автопереключение слайдов
+            let slideInterval = setInterval(nextSlide, 5000);
+
+            // Обработчики событий для кнопок
+            nextBtn.addEventListener('click', function () {
+                clearInterval(slideInterval);
+                nextSlide();
+                slideInterval = setInterval(nextSlide, 5000);
+            });
+
+            prevBtn.addEventListener('click', function () {
+                clearInterval(slideInterval);
+                prevSlide();
+                slideInterval = setInterval(nextSlide, 5000);
+            });
+
+            // Инициализация первого слайда
+            showSlide(0);
+
+            // Обработка кликов по контактам
+            const addressLink = document.querySelector('.contact-address');
+            const phoneLink = document.querySelector('.contact-phone');
+
+            // Для адреса - переход на Яндекс.Карты
+            addressLink.addEventListener('click', function (e) {
+                // В реальном проекте здесь будет ссылка на конкретный адрес
+                console.log('Переход на Яндекс.Карты с адресом: Москва, ул. Автосервисная, д. 15');
+            });
+
+            // Для телефона - вызов
+            phoneLink.addEventListener('click', function (e) {
+                // В реальном проекте на мобильных устройствах это вызовет набор номера
+                console.log('Инициирован вызов по номеру: +7 (495) 123-45-67');
+            });
+        });
+    </script> -->
+</body>
+
+</html>
