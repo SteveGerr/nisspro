@@ -67,10 +67,6 @@ a {
     gap: 10px;
 }
 
-.logo-icon {
-    font-size: 32px;
-    color: #3498db;
-}
 
 .logo-text {
     font-size: 24px;
@@ -78,7 +74,7 @@ a {
 }
 
 .logo-text span {
-    color: #3498db;
+    color: #d80707;
 }
 
 .contact-info {
