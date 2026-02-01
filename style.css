@@ -137,6 +137,10 @@ a {
     opacity: 1;
 }
 
+.slide-1 {
+    background-position-y: 0px;
+}
+
 .slide-content {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
     color: white;
