@@ -142,13 +142,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Создание метки
         const placemark = new ymaps.Placemark(center, {
-            hintContent: 'НиссПро - автосервис',
+            hintContent: 'NissPro - автосервис',
             balloonContent: `
                 <div class="map-balloon">
-                    <strong>НиссПро</strong><br>
+                    <strong>NissPro</strong><br>
                     Профессиональный автосервис<br>
                     пр. Карла Маркса, 30А<br>
                     Телефон: +7 (927) 295-30-30
+                </div>
+                <div class="map-balloon-img">
+                    <img src="images/facade.jpg" alt="NissPro">
                 </div>
             `
         }, {
