@@ -45,7 +45,7 @@ a {
 .main-header {
     background-color: #2c3e50;
     color: white;
-    padding: 15px 0;
+    padding: 0;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -57,6 +57,7 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 0 15px;
+    position: relative;
 }
 
 .logo {
@@ -145,6 +146,11 @@ a {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
     color: white;
     padding: 40px;
+    width: 100%;
+
+}
+
+.slide-content-wrapper {
     width: 100%;
     max-width: 800px;
 }
@@ -264,7 +270,22 @@ a {
 
 }
 
+.menu {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
 
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}
+
+.menu-nav-list {
+    display: flex;
+    margin: 0 0 0 150px;
+    gap: 20px;
+    list-style: none;
+}
 
 /* Стили для footer */
 .main-footer {
@@ -370,6 +391,7 @@ a {
     .header-container {
         flex-direction: column;
         gap: 15px;
+        align-items: flex-start;
     }
 
     .contact-info {
@@ -435,4 +457,294 @@ a {
     .video {
         height: auto;
     }
+
+}
+/* Бургер-меню */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    position: absolute;
+    right: 16px;
+    top: calc(50% - 10px);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 20px;
+    z-index: 1001;
+}
+
+.burger-menu span {
+    width: 100%;
+    height: 3px;
+    background-color: #3498db;
+    transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
+.burger-menu.active span:first-child {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.burger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active span:last-child {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Мобильная навигация */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 320px;
+    height: 100vh;
+    background-color: #2c3e50fa;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    padding: 80px 20px 30px;
+    overflow-y: auto;
+}
+
+.mobile-nav.active {
+    right: 0;
+}
+
+.mobile-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-nav-link {
+    display: block;
+    padding: 15px 0;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 1px solid #eeeeee40;
+    transition: color 0.3s ease;
+}
+
+.mobile-nav-link:hover {
+    color: #007bff;
+}
+
+.mobile-nav-link i {
+    margin-right: 10px;
+    width: 20px;
+    color: #3498db;
+}
+
+.mobile-phone,
+.mobile-address {
+    font-weight: 600;
+    color: #3498db;
+}
+
+/* Затемнение фона */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Запрет скролла при открытом меню */
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* Адаптация хедера для мобильных устройств */
+@media (max-width: 992px) {
+
+    .contact-info {
+        order: 2;
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .burger-menu {
+        order: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-wrap: wrap;
+    }
+    .burger-menu {
+        display: flex;
+    }
+
+    .contact-info {
+        display: none;
+        font-size: 14px;
+    }
+
+    .contact-info span {
+        display: inline;
+    }
+
+    .contact-address span {
+        white-space: normal;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-info {
+        flex-direction: column;
+        gap: 5px;
+        align-items: flex-start;
+    }
+
+    .contact-address,
+    .contact-phone {
+        width: 100%;
+    }
+
+    .mobile-nav {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+/* Стили для секции "О компании" */
+.about-content {
+    padding: 40px 0;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Стили для секции карты */
+.map-section {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.yandex-map {
+    width: 100%;
+    height: 100%;
+}
+
+.map-route-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: #007bff;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.map-route-button:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
+}
+
+.map-route-button i {
+    font-size: 18px;
+}
+
+.map-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.map-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.map-info-item i {
+    font-size: 24px;
+    color: #007bff;
+    min-width: 30px;
+}
+
+.map-info-item div {
+    display: flex;
+    flex-direction: column;
+}
+
+.map-info-item strong {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 5px;
+}
+
+.map-info-item span,
+.map-info-item a {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.map-info-item a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.map-info-item a:hover {
+    text-decoration: underline;
+}
+
+/* Стили для балуна карты */
+.map-balloon {
+    padding: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.map-balloon strong {
+    font-size: 16px;
+    color: #007bff;
 }

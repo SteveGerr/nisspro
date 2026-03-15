@@ -11,7 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-
+    <!-- Яндекс Карты API -->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=404390fd-d112-4870-adb0-8edde96edbb3&lang=ru_RU" type="text/javascript"></script>
 </head>
 
 <body>
@@ -19,8 +20,15 @@
     <header class="main-header">
         <div class="header-container">
             <div class="logo">
-                <img src="images/Nisspro-logo.jpg" alt="">
+                <img src="images/NISSPRO_LOGO.png" alt="">
                 <!-- <div class="logo-text">Niss<span>Pro</span></div> -->
+            </div>
+            <div class="menu">
+                <ul class="menu-nav-list">
+                    <li><a href="#services" class="menu-nav-link">Услуги</a></li>
+                    <li><a href="#about" class="menu-nav-link">О компании</a></li>
+                    <li><a href="#map" class="menu-nav-link">Как нас найти</a></li>
+                </ul>
             </div>
             <div class="contact-info">
                 <a href="https://yandex.ru/maps/?text=53.199417, 50.152565" target="_blank"
@@ -33,38 +41,61 @@
                     <span>+7 (927) 295-30-30</span>
                 </a>
             </div>
+            <button class="burger-menu" id="burgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
+        <nav class="mobile-nav" id="mobileNav">
+            <ul class="mobile-nav-list">
+                <li><a href="#services" class="mobile-nav-link">Услуги</a></li>
+                <li><a href="#about" class="mobile-nav-link">О компании</a></li>
+                <li><a href="#map" class="mobile-nav-link">Как нас найти</a></li>
+                <li><a href="tel:+79272953030" class="mobile-nav-link mobile-phone"><i class="fas fa-phone"></i> +7 (927)
+                        295-30-30</a></li>
+                <li><a href="https://yandex.ru/maps/?text=53.199417, 50.152565" target="_blank"
+                        class="mobile-nav-link mobile-address"><i class="fas fa-map-marker-alt"></i> Самара, пр. Карла Маркса,
+                        30А</a></li>
+            </ul>
+        </nav>
     </header>
 
     <!-- Слайдер -->
     <section class="slider-section">
         <div class="slider">
             <div class="slide slide-1 active"
-                style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/facade.jpg')">
+                style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/fasade.jpg')">
 
             </div>
             <div class="slide active"
                 style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/slide_1.jpeg')">
                 <div class="slide-content">
-                    <h2 class="slide-title">Профессиональный ремонт</h2>
-                    <p class="slide-text">Качественное обслуживание и ремонт автомобилей любой сложности с
-                        использованием оригинальных запчастей и аналогов.</p>
+                    <div class="slide-content-wrapper">
+                        <h2 class="slide-title">Профессиональный ремонт</h2>
+                        <p class="slide-text">Качественное обслуживание и ремонт автомобилей любой сложности с
+                            использованием оригинальных запчастей и аналогов.</p>
+                    </div>
                 </div>
             </div>
             <div class="slide"
-                style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/slide_2.jpeg')">
+                style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/diagnostics-cab-2.jpg')">
                 <div class="slide-content">
-                    <h2 class="slide-title">Диагностика и техническое обслуживание</h2>
-                    <p class="slide-text">Современное диагностическое оборудование позволяет точно определить
-                        неисправность и выполнить качественный ремонт.</p>
+                    <div class="slide-content-wrapper">
+                        <h2 class="slide-title">Диагностика и техническое обслуживание</h2>
+                        <p class="slide-text">Современное диагностическое оборудование позволяет точно определить
+                            неисправность и выполнить качественный ремонт.</p>
+                    </div>
                 </div>
             </div>
             <div class="slide"
                 style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/slide_3.jpeg')">
                 <div class="slide-content">
-                    <h2 class="slide-title">Шиномонтаж и сход-развал</h2>
-                    <p class="slide-text">Полный комплекс услуг по шиномонтажу и регулировке углов установки колес на
-                        современном оборудовании.</p>
+                    <div class="slide-content-wrapper">
+                        <h2 class="slide-title">Шиномонтаж и сход-развал</h2>
+                        <p class="slide-text">Полный комплекс услуг по шиномонтажу и регулировке углов установки колес на
+                            современном оборудовании.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -73,19 +104,19 @@
     </section>
 
     <!-- Видео -->
-    <section>
+    <!-- <section>
         <iframe class="video" src="https://vk.com/video_ext.php?oid=-226639235&id=456239026&hash=1a26c4488e4e67ae"
              frameborder="0" allowfullscreen="1"
             allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
-    </section>
+    </section> -->
 
     <!-- Инфо-блоки -->
-    <section class="info-section">
+    <section id="services" class="info-section">
         <div class="container">
             <h2 class="section-title">Наши услуги</h2>
             <div class="info-blocks">
                 <div class="info-block">
-                    <img src="images/diagnost.jpeg"
+                    <img src="images/diagnostics-cab.jpg"
                         alt="Диагностика двигателя" class="info-img">
                     <div class="info-content">
                         <h3 class="info-title">Диагностика двигателя</h3>
@@ -112,16 +143,168 @@
                     </div>
                 </div>
                 <div class="info-block">
-                    <img src="images/tire-service.jpeg"
+                    <img src="images/tire-service-2.jpg"
                         alt="Кузовные работы" class="info-img">
                     <div class="info-content">
                         <h3 class="info-title">Шиномонтаж</h3>
+                        <p class="info-text">
+                        К сезону готовы! В нашем шиномонтажном цехе вы получите полный комплекс услуг:
+                        <br>
+                        - Снятие и установка колес любой сложности;
+                        <br>
+                        - Профессиональная балансировка на высокоточных станках;
+                        <br>
+                        - Ремонт проколов и порезов (горячая и холодная вулканизация);
+                        <br>
+                        - Сезонное хранение шин (по желанию).
+
+                        Приезжайте к нам — у нас чисто, тепло и нет очередей, если записаться заранее. А пока мастера работают, вы сможете
+                        отдохнуть в уютной зоне ожидания
+                        </p>
+                    </div>
+                </div>
+                <div class="info-block">
+                    <img src="images/changing-oil.jpg" alt="Тех. обслуживание" class="info-img">
+                    <div class="info-content">
+                        <h3 class="info-title">Плановое ТО</h3>
+                        <p class="info-text">
+                            Машина требует внимания каждые 10-15 тысяч километров. Не ждите, когда застучит двигатель или загорится "чек" —
+                            приходите на плановое техническое обслуживание. Наши мастера не только обновят масло и фильтры, но и проведут полную
+                            ревизию:
+                            <br>
+                            - Состояние тормозных колодок и дисков;
+                            <br>
+                            - Уровни всех технических жидкостей;
+                            <br>
+                            - Герметичность патрубков и радиаторов;
+                            <br>
+                            - Работу световых приборов.
+                            <br>
+                            Один визит на ТО избавит вас от неожиданных поломок в самый неподходящий момент.
+                        </p>
+                    </div>
+                </div>
+                <div class="info-block">
+                    <img src="images/engine-repair.jpg" alt="Тех. обслуживание" class="info-img">
+                    <div class="info-content">
+                        <h3 class="info-title">Ремонт двигателя</h3>
+                        <p class="info-text">
+                            Стук в двигателе, падение компрессии, масложор? Мы возвращаем моторы к жизни. Наш сервис выполняет полный цикл работ по
+                            восстановлению двигателей внутреннего сгорания:
+                            <br>
+                            - Полная разборка и дефектовка блока цилиндров;
+                            <br>
+                            - Расточка/гильзовка блока (при наличии оборудования или кооперации);
+                            <br>
+                            - Замена поршневой группы, вкладышей, сальников;
+                            <br>
+                            - Ремонт или замена ГБЦ (притирка клапанов, замена маслосъемных колпачков).
+
+                            После сборки проводим обкатку и финальную компьютерную диагностику.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- О нас -->
+    <section id="about" class="info-section">
+        <div class="container">
+            <h2 class="section-title">О нас</h2>
+            <div class="info-blocks">
+                <div class="info-block">
+                    <img src="images/service-zone.jpg"
+                        alt="Диагностика двигателя" class="info-img">
+                    <div class="info-content">
+                        <h3 class="info-title">Современный ремонтный цех</h3>
+                        <p class="info-text">В основе нашей работы — не только опыт мастеров, но и передовое технологическое оснащение ремонтной зоны. Мы
+                        используем профессиональное оборудование премиум-брендов, что позволяет нам браться даже за самые нестандартные задачи и
+                        гарантировать точность всех работ.</p>
+                    </div>
+                </div>
+                <div class="info-block">
+                    <img src="images/warehouse-pan.jpg"
+                        alt="Диагностика двигателя" class="info-img">
+                    <div class="info-content">
+                        <h3 class="info-title">Только проверенные детали</h3>
+                        <p class="info-text">Наш склад — это не просто помещение для хранения, это зона контроля качества. Все поступающие запчасти проходят
+                        первичный осмотр на предмет соответствия заказу и отсутствия дефектов. Мы работаем только с проверенными запчастями, поэтому на складе не задерживаются контрафактные или сомнительные детали.
+                        </p>
+                    </div>
+                </div>
+                <div class="info-block">
+                    <img src="images/lounge-zone.jpg"
+                        alt="Диагностика двигателя" class="info-img">
+                    <div class="info-content">
+                        <h3 class="info-title">Вы отдыхаете, мы работаем</h3>
+                        <p class="info-text">
+                        Мы создали зону отдыха так, чтобы вы чувствовали себя как дома. Пока автомобиль в надежных руках мастеров, вы можете:
+
+                        Посмотреть новости или интересный фильм по телевизору;
+
+                        Поработать с ноутбуком или отдохнуть на мягких диванах;
+
+                        Бесплатно угоститься чаем или кофе;
+
+                        Воспользоваться чистым и комфортным туалетом.
+
+                        Забудьте о тесных коридорах и пластиковых стульях — у нас можно провести время с пользой и удовольствием.
+                        </p>
+                    </div>
+                </div>
+                <div class="info-block">
+                    <img src="images/original-equipments-2.jpg" alt="Современное и фирменное оборудование" class="info-img">
+                    <div class="info-content">
+                        <h3 class="info-title">Современное и фирменное оборудование</h3>
+                        <p class="info-text">
+                        Мы
+                        используем профессиональное диагностическое оборудование ведущих мировых брендов. Сканеры позволяют видеть ошибки электроники с ювелирной точностью, а стенды сход-развала ловят отклонения в
+                        миллиметры. Мы не предполагаем — мы знаем, что именно сломалось.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <section id="map" class="map-section">
+        <div class="container">
+            <h2 class="section-title">Как нас найти</h2>
+            <div class="map-container">
+                <div id="yandex-map" class="yandex-map"></div>
+            </div>
+            <div class="map-info">
+                <div class="map-info-item">
+                    <i class="fas fa-map-pin"></i>
+                    <div>
+                        <strong>Адрес:</strong>
+                        <span>Самара, проспект Карла Маркса, 30А</span>
+                    </div>
+                </div>
+                <div class="map-info-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <strong>Телефон:</strong>
+                        <a href="tel:+79272953030">+7 (927) 295-30-30</a>
+                    </div>
+                </div>
+                <div class="map-info-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <strong>Режим работы:</strong>
+                        <span>Пн-Пт: 9:00-20:00, Сб: 09:00-18:00</span>
+                    </div>
+                </div>
+                <div class="map-info-item">
+                    <i class="fas fa-car"></i>
+                    <div>
+                        <strong>Как проехать:</strong>
+                        <span>Остановка "Караван"</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="main-footer">
@@ -129,18 +312,27 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3 class="footer-title">О компании</h3>
-                    <p>NissPro - специализированный автосервис по ремонту и обслуживанию автомобилей Nissan, Infinity, lexus и других. </p>
+                    <p>Профильный автосервис по ремонту и обслуживанию Nissan&Infiniti. <br>Опыт работы с 2008г.
+                    Имеем свой склад запасных деталей.</p>
                 </div>
                 <div class="footer-column">
                     <h3 class="footer-title">Услуги</h3>
                     <ul class="footer-links">
-                        <li>Диагностика автомобиля</li>
-                        <li>Техническое обслуживание</li>
-                        <li>Ремонт двигателей</li>
+                        <li>Проведение технического обслуживания</li>
+                        <li>Диагностика автомобиля дилерским сканером consult lll+</li>
+                        <li>Автоэлектрика</li>
                         <li>Шиномонтаж</li>
-                        <li>Заправка и ремонт автокондиционера</li>
+                        <li>3D развал/схождение колес</li>
+                        <li>Обслуживание и ремонт автокондиционеров</li>
                         <li>Запчасти и комплектующие под заказ</li>
                         <li>Эндоскопия двигателя</li>
+                        <li>Ремонт двигателей и коробок передач</li>
+                        <li>Ремонт ходовой части</li>
+                        <li>Проточка тормозных дисков</li>
+                        <li>Ремонт стартеров и генераторов</li>
+                        <li>Сезонное хранение шин</li>
+                        <li>Сварочные работы</li>
+
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -167,7 +359,9 @@
             </div>
         </div>
     </footer>
-<script src="main.js"></script>
+    <!-- Затемнение фона при открытом меню -->
+    <div class="overlay" id="overlay"></div>
+    <script src="main.js"></script>
 
 </body>
 
