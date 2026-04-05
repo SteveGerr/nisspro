@@ -130,6 +130,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function initMap() {
+        const DARK_MAP = 'custom#dark';
+        ymaps.layer.storage.add(DARK_MAP, function DarkLayer() {
+            return new ymaps.Layer(
+            'https://core-renderer-tiles.maps.yandex.net/tiles?l=map&theme=dark&%c&%l&scale={{ scale }}'
+            );
+        });
+
+        // 2. Регистрируем новый тип карты
+        ymaps.mapType.storage.add(DARK_MAP, new ymaps.MapType('Dark Map', [DARK_MAP]));
         // Координаты автосервиса
         const center = [53.199417, 50.152565];
 
@@ -137,7 +146,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const map = new ymaps.Map('yandex-map', {
             center: center,
             zoom: 17,
-            controls: ['zoomControl', 'fullscreenControl']
+            controls: ['zoomControl', 'fullscreenControl'],
+            type: 'custom#dark'
         });
 
         // Создание метки
@@ -175,4 +185,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
         document.querySelector('.map-container').appendChild(routeButton);
     }
+
+        // ========== ПАРАЛЛАКС ЭФФЕКТ ==========
+    const layer1 = document.getElementById('layer1');
+    // const layer2 = document.getElementById('layer2');
+    // const layer3 = document.getElementById('layer3');
+
+    function updateParallax() {
+        let scrollY = window.scrollY;
+        // Скорости: чем меньше множитель, тем медленнее (эффект глубины)
+        // слой1 (дальний) скорость 0.2, слой2 0.4, слой3 0.6
+        // let y1 = scrollY * 0.15;
+        // let y2 = scrollY * 0.75;
+        // let y3 = scrollY * 0.55;
+
+        // if(layer1) layer1.style.transform = `translateY(${y1}px) scale(1.05)`;
+        // if(layer2) layer2.style.transform = `translateY(${y2}px) scale(1.02)`;
+        // if(layer3) layer3.style.transform = `translateY(${y3}px) scale(1)`;
+    }
+
+    window.addEventListener('scroll', updateParallax);
+    window.addEventListener('resize', updateParallax);
+    updateParallax();
 });
