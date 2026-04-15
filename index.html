@@ -286,7 +286,13 @@
     <section id="map" class="map-section">
         <div class="container">
             <h2 class="section-title">Как нас найти</h2>
-            <div class="map-container">
+            <div id="mapContainer" class="map-container">
+                <div id="mapPlaceholder" class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <p>Для отображения карты необходимо принять условия использования cookie-файлов.<br>Яндекс.Карты собирают
+                        технические данные (IP-адрес, геолокацию, информацию о браузере).</p>
+                    <button id="acceptForMapBtn">Принять cookie и загрузить карту</button>
+                </div>
                 <div id="yandex-map" class="yandex-map"></div>
             </div>
             <div class="map-info">
@@ -377,7 +383,72 @@
     </footer>
     <!-- Затемнение фона при открытом меню -->
     <div class="overlay" id="overlay"></div>
+
+        <!-- Cookie Consent Banner -->
+        <div id="cookieConsent" class="cookie-consent">
+            <div class="cookie-consent-content">
+                <div class="cookie-consent-text">
+                    Мы используем cookie-файлы для работы Яндекс.Карт. Это необходимо для отображения карты и маршрутов.
+                    <a href="#" id="privacyLink">Политика конфиденциальности</a>
+                </div>
+                <div class="cookie-consent-buttons">
+                    <button id="cookieAccept" class="cookie-btn cookie-btn-accept">Принять</button>
+                    <button id="cookieDecline" class="cookie-btn cookie-btn-decline">Отказаться</button>
+                    <button id="cookieSettings" class="cookie-btn cookie-btn-settings">Настройки</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Privacy Modal -->
+        <div id="privacyModal" class="privacy-modal">
+            <div class="privacy-modal-content">
+                <span class="privacy-modal-close">&times;</span>
+                <h2>Политика конфиденциальности</h2>
+                <p><strong>Дата последнего обновления:</strong> 15 апреля 2026 г.</p>
+
+                <h3>1. Общие положения</h3>
+                <p>Настоящая Политика конфиденциальности (далее — Политика) регулирует порядок обработки и защиты персональных
+                    данных пользователей сайта NissPro (далее — Сайт).</p>
+
+                <h3>2. Какие данные мы собираем</h3>
+                <p>При использовании нашего сайта могут собираться следующие данные:</p>
+                <ul>
+                    <li>IP-адрес пользователя</li>
+                    <li>Тип и версия браузера</li>
+                    <li>Операционная система</li>
+                    <li>Данные о местоположении (геолокация)</li>
+                    <li>Cookie-файлы</li>
+                </ul>
+
+                <h3>3. Использование Яндекс.Карт</h3>
+                <p>Наш сайт использует API Яндекс.Карт для отображения местоположения автосервиса. При загрузке карт ваши
+                    технические данные (IP-адрес, данные браузера, геолокация) передаются на сервера Яндекса для корректной
+                    работы картографического сервиса.</p>
+                <p>Обработка данных осуществляется в соответствии с <a href="https://yandex.ru/legal/confidential/"
+                        target="_blank" style="color:#d4af37">Политикой конфиденциальности Яндекса</a>.</p>
+
+                <h3>4. Цели обработки данных</h3>
+                <ul>
+                    <li>Обеспечение работы картографического сервиса</li>
+                    <li>Улучшение работы сайта</li>
+                    <li>Сбор статистики посещаемости</li>
+                </ul>
+
+                <h3>5. Срок хранения данных</h3>
+                <p>Cookie-файлы хранятся на устройстве пользователя в течение срока, установленного настройками браузера.
+                    Согласие на обработку данных действует 6 месяцев, после чего запрашивается повторно.</p>
+
+                <h3>6. Права пользователей</h3>
+                <p>Вы можете в любой момент отозвать согласие на обработку данных через настройки cookie в футере сайта или
+                    очистив cookie-файлы в настройках браузера.</p>
+
+                <h3>7. Контактная информация</h3>
+                <p>По всем вопросам, связанным с обработкой персональных данных, вы можете обратиться по телефону: <a
+                        href="tel:+79272953030" style="color:#d4af37">+7 (927) 295-30-30</a></p>
+            </div>
+        </div>
     <script src="main.js"></script>
+    <script src="policy.js"></script>
 
 </body>
 
