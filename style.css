@@ -25,6 +25,7 @@ body {
 
 .header-phones {
     display: flex;
+    align-items: center;
 }
 
     /* --- ПАРАЛЛАКС КОНТЕЙНЕР И СЛОИ (задний фон для всего сайта) --- */
@@ -57,7 +58,6 @@ body {
     .layer-1 {
         background-image: url('./images/nissan-gtr-front.webp');
         background-size: cover;
-        transform: translateY(0px) scale(1.05);
 
         @media screen and (max-width: 768px) {
             background-image: url('./images/back-mobile.webp');
@@ -162,6 +162,10 @@ a {
     font-size: 18px;
     color: #315f8c;
     /* color: #3498db; */
+}
+
+.contact-vk-mobile {
+    margin: 10px 0;
 }
 
 /* Стили для слайдера */
