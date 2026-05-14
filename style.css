@@ -56,13 +56,11 @@ body {
     /* Разные слои с разной скоростью (эффект глубины) */
     .layer-1 {
         background-image: url('./images/nissan-gtr-front.webp');
-        /* горы / абстрактный фон */
         background-size: cover;
-        /* opacity: 0.25; */
         transform: translateY(0px) scale(1.05);
 
         @media screen and (max-width: 768px) {
-            background-size: auto;
+            background-image: url('./images/back-mobile.webp');
         }
     }
 
