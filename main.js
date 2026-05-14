@@ -149,5 +149,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
     window.addEventListener('scroll', updateParallax);
     window.addEventListener('resize', updateParallax);
-    updateParallax();
+    // updateParallax();
 });
