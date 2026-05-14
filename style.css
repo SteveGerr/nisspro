@@ -295,12 +295,12 @@ a {
 }
 
 .info-block {
-    background-color: #171718;
+    background-color: rgba(23, 23, 24, 0.8);
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    filter: opacity(0.9);
+
 }
 
 .info-block:hover {
@@ -316,6 +316,7 @@ a {
     height: 250px;
     width: 100%;
     object-fit: cover;
+    filter: opacity(0.9);
 }
 
 .info-content {
@@ -330,7 +331,7 @@ a {
 }
 
 .info-text {
-    color: #8d8d8d;
+    color: #cecece;
     /* color: #666; */
     line-height: 1.6;
 }
