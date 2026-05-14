@@ -1,0 +1,198 @@
+/* component-gallery.css */
+.sevices-gallery-container {
+    max-width: 1200px;
+    width: 100%;
+    background: rgba(23, 23, 24, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(2px);
+    padding: 24px;
+}
+
+.sevices-gallery-container input[type="radio"] {
+    display: none;
+}
+
+.gallery-content {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.titles-list {
+    flex: 1;
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.title-icon {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #cecece;
+    font-weight: 500;
+    border: 1px solid rgba(206, 206, 206, 0.1);
+}
+
+.title-icon:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateX(4px);
+}
+
+.title-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: #cecece;
+    stroke-width: 1.8;
+    transition: stroke 0.2s;
+}
+
+.title-icon img {
+    width: 24px;
+    height: 24px;
+    filter: invert(1);
+}
+
+#tab1:checked~.gallery-content .titles-list label[for="tab1"],
+#tab2:checked~.gallery-content .titles-list label[for="tab2"],
+#tab3:checked~.gallery-content .titles-list label[for="tab3"],
+#tab4:checked~.gallery-content .titles-list label[for="tab4"],
+#tab5:checked~.gallery-content .titles-list label[for="tab5"],
+#tab6:checked~.gallery-content .titles-list label[for="tab6"] {
+    background: rgba(206, 206, 206, 0.15);
+    border-color: #cecece;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.display-panel {
+    flex: 2;
+    min-width: 260px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.panel {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.panel img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+}
+
+.description {
+    padding: 20px;
+    color: #cecece;
+    font-size: 1rem;
+    line-height: 1.5;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.description h3 {
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+    color: #ffffff;
+}
+
+.description p {
+    opacity: 0.9;
+}
+
+#tab1:checked~.gallery-content .display-panel .panel1,
+#tab2:checked~.gallery-content .display-panel .panel2,
+#tab3:checked~.gallery-content .display-panel .panel3,
+#tab4:checked~.gallery-content .display-panel .panel4,
+#tab5:checked~.gallery-content .display-panel .panel5,
+#tab6:checked~.gallery-content .display-panel .panel6 {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .sevices-gallery-container {
+        padding: 16px;
+    }
+
+    .gallery-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .titles-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        min-width: auto;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .title-icon {
+        flex-direction: column;
+        padding: 10px 16px;
+        gap: 6px;
+        text-align: center;
+        min-width: 70px;
+        flex: 0 1 auto;
+    }
+
+    .title-icon span {
+        font-size: 0.8rem;
+    }
+
+    .title-icon svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .title-icon:hover {
+        transform: translateY(-2px);
+    }
+
+    .display-panel {
+        min-width: auto;
+    }
+
+    .description {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title-icon {
+        min-width: 60px;
+        padding: 8px 12px;
+    }
+
+    .title-icon span {
+        font-size: 0.7rem;
+    }
+
+    .description h3 {
+        font-size: 1.1rem;
+    }
+}

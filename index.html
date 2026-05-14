@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="services.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <!-- Яндекс Карты API -->
     <script src="https://api-maps.yandex.ru/2.1/?apikey=404390fd-d112-4870-adb0-8edde96edbb3&lang=ru_RU" type="text/javascript"></script>
@@ -201,6 +202,137 @@
     <section id="services" class="info-section">
         <div class="container">
             <h2 class="section-title">Наши услуги</h2>
+            <div class="sevices-gallery-container">
+
+                <input type="radio" name="gallery-tab" id="tab1" checked>
+                <input type="radio" name="gallery-tab" id="tab2">
+                <input type="radio" name="gallery-tab" id="tab3">
+                <input type="radio" name="gallery-tab" id="tab4">
+                <input type="radio" name="gallery-tab" id="tab5">
+                <input type="radio" name="gallery-tab" id="tab6">
+
+                <div class="gallery-content">
+                    <!-- Список тайтлов с иконками -->
+                    <div class="titles-list">
+                        <label for="tab1" class="title-icon">
+                            <img src="/images/engine-50.png" alt="" class="icon" style="width:24px; height:24px">
+                            <span>Диагностика</span>
+                        </label>
+                        <label for="tab2" class="title-icon">
+                            <img src="/images/shock-absorber-64.png" alt="" class="icon" style="width:24px; height:24px">
+                            <span>Ремонт ходовой</span>
+                        </label>
+                        <label for="tab3" class="title-icon">
+                            <img src="/images/skhod-razval-3.png" alt="" class="icon" style="width:24px; height:24px; transform: scale(1.3)">
+                            <span>Сход/развал</span>
+                        </label>
+                        <label for="tab4" class="title-icon">
+                            <img src="/images/wheel-50.png" alt="" class="icon" style="width:24px; height:24px">
+                            <span>Шиномонтаж</span>
+                        </label>
+                        <label for="tab5" class="title-icon">
+                            <img src="/images/engine-oil-50.png" alt="" class="icon" style="width:24px; height:24px">
+
+                            <span>Плановое ТО</span>
+                        </label>
+                        <label for="tab6" class="title-icon">
+                            <img src="/images/piston-50.png" alt="" class="icon" style="width:24px; height:24px">
+                            <span>Ремонт двигателя</span>
+                        </label>
+                    </div>
+
+                    <!-- Правая панель с изображением и описанием -->
+                    <div class="display-panel">
+                        <div class="panel panel1">
+                            <img src="images/diagnostics-cab.webp" alt="Диагностика двигателя">
+                            <div class="description">
+                                <h3>Диагностика двигателя</h3>
+                                <p>Полная компьютерная диагностика двигателя, выявление неисправностей на
+                                ранней стадии. Используем современное оборудование для точного определения проблем.</p>
+                            </div>
+                        </div>
+                        <div class="panel panel2">
+                            <img src="images/undercarriage.webp" alt="Ремонт ходовой части">
+                            <div class="description">
+                                <h3>Ремонт ходовой</h3>
+                                <p>Профессиональный ремонт подвески, замена амортизаторов, шаровых опор,
+                                сайлентблоков. Гарантия на все выполненные работы.</p>
+                            </div>
+                        </div>
+                        <div class="panel panel3">
+                            <img src="images/rasval.webp" alt="Сход/развал">
+                            <div class="description">
+                                <h3>Сход/развал</h3>
+                                <p>- Использование современного компьютерного оборудования.<br>
+                                - Опытные мастера с высокой квалификацией.<br>
+                                - Быстрая и точная диагностика.<br>
+                                Доверьте настройку схода-развала профессионалам — и ваш автомобиль всегда будет держать дорогу уверенно и безопасно!</p>
+                            </div>
+                        </div>
+                        <div class="panel panel4">
+                            <img src="images/tire-service-2.webp" alt="Шиномонтаж">
+                            <div class="description">
+                                <h3>Шиномонтаж</h3>
+                                <p>К сезону готовы! В нашем шиномонтажном цехе вы получите полный комплекс услуг:
+                                <br>
+                                - Снятие и установка колес любой сложности;
+                                <br>
+                                - Профессиональная балансировка на высокоточных станках;
+                                <br>
+                                - Ремонт проколов и порезов (горячая и холодная вулканизация);
+                                <br>
+                                - Сезонное хранение шин (по желанию).
+                                <br>
+                                Приезжайте к нам — у нас чисто, тепло и нет очередей, если записаться заранее. А пока мастера работают, вы сможете
+                                отдохнуть в уютной зоне ожидания</p>
+                            </div>
+                        </div>
+                        <div class="panel panel5">
+                            <img src="images/changing-oil.webp" alt="Тех. обслуживание">
+                            <div class="description">
+                                <h3>Плановое ТО</h3>
+                                <p>Машина требует внимания каждые 10-15 тысяч километров. Не ждите, когда застучит двигатель или загорится "чек" —
+                                приходите на плановое техническое обслуживание. Наши мастера не только обновят масло и фильтры, но и проведут полную
+                                ревизию:
+                                <br>
+                                - Состояние тормозных колодок и дисков;
+                                <br>
+                                - Уровни всех технических жидкостей;
+                                <br>
+                                - Герметичность патрубков и радиаторов;
+                                <br>
+                                - Работу световых приборов.
+                                <br>
+                                Один визит на ТО избавит вас от неожиданных поломок в самый неподходящий момент.</p>
+                            </div>
+                        </div>
+                        <div class="panel panel6">
+                            <img src="images/engine-repair.webp" alt="Ремонт двигателя" >
+                            <div class="description">
+                                <h3>Ремонт двигателя</h3>
+                                <p>Стук в двигателе, падение компрессии, масложор? Мы возвращаем моторы к жизни. Наш сервис выполняет полный цикл работ по
+                                восстановлению двигателей внутреннего сгорания:
+                                <br>
+                                - Полная разборка и дефектовка блока цилиндров;
+                                <br>
+                                - Расточка/гильзовка блока (при наличии оборудования или кооперации);
+                                <br>
+                                - Замена поршневой группы, вкладышей, сальников;
+                                <br>
+                                - Ремонт или замена ГБЦ (притирка клапанов, замена маслосъемных колпачков).
+
+                                После сборки проводим обкатку и финальную компьютерную диагностику.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section id="services" class="info-section">
+        <div class="container">
+            <h2 class="section-title">Наши услуги</h2>
             <div class="info-blocks">
                 <div class="info-block">
                     <img src="images/diagnostics-cab.webp"
@@ -296,7 +428,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Карта -->
     <section id="map" class="map-section">
