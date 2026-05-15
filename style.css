@@ -260,7 +260,7 @@ a {
 
 /* Стили для секции с инфо-блоками */
 .info-section {
-    padding: 80px 0;
+    padding: 35px 0;
     background-color: #17171875;
     /* background-color: white; */
     /* backdrop-filter: blur(2px);
