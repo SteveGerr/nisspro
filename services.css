@@ -135,7 +135,7 @@
 
 @media (max-width: 768px) {
     .sevices-gallery-container {
-        padding: 16px;
+        padding: 8px;
     }
 
     .gallery-content {
@@ -148,12 +148,13 @@
         flex-wrap: wrap;
         min-width: auto;
         justify-content: center;
-        gap: 10px;
+        gap: 6px;
     }
 
     .title-icon {
-        flex-direction: column;
-        padding: 10px 16px;
+        /* flex-direction: column; */
+        justify-content: center;
+        padding: 4px 6px;
         gap: 6px;
         text-align: center;
         min-width: 70px;
@@ -185,7 +186,7 @@
 @media (max-width: 480px) {
     .title-icon {
         min-width: 60px;
-        padding: 8px 12px;
+        padding: 4px 6px;
     }
 
     .title-icon span {

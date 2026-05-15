@@ -94,7 +94,7 @@ a {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 5px;
 }
 
 /* Стили для header */
@@ -322,7 +322,7 @@ a {
 }
 
 .info-content {
-    padding: 25px;
+    padding: 12px;
 }
 
 .info-title {
@@ -378,6 +378,7 @@ a {
     justify-content: space-between;
     flex-wrap: wrap;
     margin-bottom: 30px;
+    padding: 10px;
 }
 
 .footer-column {
@@ -486,6 +487,14 @@ a {
         align-items: center;
     }
 
+    .section-title {
+        margin-bottom: 36px;
+    }
+
+    .info-section {
+        padding: 24px 0;
+    }
+
     .slider-section {
         height: 60vh;
         min-height: 400px;
@@ -527,10 +536,6 @@ a {
 
     .section-title {
         font-size: 28px;
-    }
-
-    .info-section {
-        padding: 50px 0;
     }
 
     .main-footer {
@@ -733,6 +738,10 @@ body.no-scroll {
     padding: 60px 0;
     background-color: #17171875;
     /* background-color: #f8f9fa; */
+
+    @media screen and (max-width: 768px) {
+        padding: 12px 0;
+    }
 }
 
 .map-container {
