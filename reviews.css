@@ -1,14 +1,14 @@
 
 
-/* Блок отзывов — фон на всю ширину */
+
 .reviews-section {
     width: 100%;
     background-color: rgba(23, 23, 24, 0.8);
     padding: 40px 20px;
     font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    border-radius: 8px;
 }
 
-/* Заголовок секции */
 .reviews-header {
     text-align: center;
     margin-bottom: 32px;
@@ -66,7 +66,7 @@
     padding: 10px 4px 20px 4px;
 }
 
-/* Карточка отзыва */
+
 .review-card {
     flex: 0 0 auto;
     width: 320px;
@@ -78,14 +78,14 @@
     border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Лёгкая анимация при наведении (на ПК) */
+
 .review-card:hover {
     transform: translateY(-5px);
     background: rgba(255, 255, 255, 0.08);
     border-color: rgba(255, 215, 0, 0.3);
 }
 
-/* Специальный стиль для карточки "Все отзывы" */
+/* стиль для карточки "Все отзывы" */
 .review-card-all {
     flex: 0 0 auto;
     width: 320px;
@@ -239,7 +239,7 @@
     transform: scale(1.05);
 }
 
-/* Кнопки навигации (для удобства, но карусель работает и пальцем/мышкой) */
+
 .nav-buttons {
     display: flex;
     justify-content: center;
@@ -269,7 +269,7 @@
     transform: scale(1.05);
 }
 
-/* Адаптив: на телефонах карточки чуть уже, чтобы помещалось удобно */
+
 @media (max-width: 768px) {
     .reviews-section {
         padding: 30px 16px;

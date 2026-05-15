@@ -7,17 +7,6 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    /* font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        'Segoe UI',
-        Roboto,
-        'Helvetica Neue',
-        Arial,
-        sans-serif,
-        'Apple Color Emoji',
-        'Segoe UI Emoji',
-        'Segoe UI Symbol', sans-serif; */
     line-height: 1.6;
     color: #333;
     background-color: #f9f9f9;
@@ -50,8 +39,7 @@ body {
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        /* will-change: transform; */
-        /* opacity: 0.7; */
+        filter: brightness(0.2);
     }
 
     /* Разные слои с разной скоростью (эффект глубины) */
@@ -261,12 +249,7 @@ a {
 /* Стили для секции с инфо-блоками */
 .info-section {
     padding: 35px 0;
-    background-color: #17171875;
-    /* background-color: white; */
-    /* backdrop-filter: blur(2px);
-    border-radius: 40px 40px 0 0;
-    margin-top: 30px;
-    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.05); */
+    /* background-color: #17171875; */
 }
 
 .section-title {
@@ -736,7 +719,7 @@ body.no-scroll {
 /* Стили для секции карты */
 .map-section {
     padding: 60px 0;
-    background-color: #17171875;
+    /* background-color: #17171875; */
     /* background-color: #f8f9fa; */
 
     @media screen and (max-width: 768px) {
@@ -1057,4 +1040,15 @@ body.no-scroll {
 
 .cookie-settings-footer:hover {
     color: #e0e0e0;
+}
+
+.fade-in-out {
+    opacity: 0;
+    transform: translateY(160px);
+    transition: opacity 1.5s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 1.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+.fade-in-out.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
