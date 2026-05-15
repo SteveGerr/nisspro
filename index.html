@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="services.css">
+    <link rel="stylesheet" href="reviews.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <!-- Яндекс Карты API -->
     <script src="https://api-maps.yandex.ru/2.1/?apikey=404390fd-d112-4870-adb0-8edde96edbb3&lang=ru_RU"></script>
@@ -463,6 +464,26 @@
         </div>
     </section> -->
 
+    <!-- Отзывы -->
+    <section class="info-section">
+        <div class="container">
+            <h2 class="section-title">Наши отзывы</h2>
+            <div class="reviews-section">
+
+                <div class="reviews-carousel" id="reviewsCarousel">
+                    <div class="reviews-track" id="reviewsTrack">
+                        <!-- Карточки отзывов будут добавлены через JS -->
+                    </div>
+                </div>
+
+                <div class="nav-buttons">
+                    <button class="nav-btn" id="scrollLeftBtn" aria-label="Назад">←</button>
+                    <button class="nav-btn" id="scrollRightBtn" aria-label="Вперед">→</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
     <!-- Карта -->
     <section id="map" class="map-section">
         <div class="container">
@@ -653,6 +674,7 @@
         </div>
     <script src="main.min.js"></script>
     <script src="policy.min.js"></script>
+    <script src="reviews.js"></script>
 
 </body>
 
